@@ -1,27 +1,43 @@
+<!-- Import Polymer library and a custom component that will be used later.
+     More on HTML 5 import feature: http://www.html5rocks.com/en/tutorials/webcomponents/imports/
+-->
 <link rel="import" href="../polymer/polymer.html">
 <link rel="import" href="../iron-icon/iron-icon.html">
 
+<!-- The <dom-module> tag wraps an element's local DOM definition.
+In this case, the id attribute shows that this module includes the
+local DOM for an element called icon-toggle. -->
 <dom-module id="icon-toggle">
 
+    <!--
+     The <template> actually defines the element's local DOM structure and styling.
+     This is where you'll add markup for your custom element.
+     More about Local DOM: https://www.polymer-project.org/1.0/docs/devguide/local-dom
+     -->
+    <template>
 
-  <template>
+        <!-- These styles don't affet the rest of the document, are local to this component -->
+        <style>
+            /* local DOM styles go here */
+            /* :host defines the current custom elemnt (icon-toggle) */
+            :host {
+                display: inline-block;
+            }
+        </style>
 
-    <style>
-      /* local DOM styles go here */
-      :host {
-        display: inline-block;
-      }
-    </style>
+        <!-- local DOM goes here -->
+        <span>Not much here yet.</span>
+    </template>
 
-    <!-- local DOM goes here -->
-    <span>Not much here yet.</span>
-  </template>
-
-  <script>
-  Polymer({
-    is: 'icon-toggle',
-  });
-  </script>
+    <!-- This javascript is registering the element -->
+    <script>
+        Polymer({
+            /* this is the element's prototype */
+            /* the 'is' value has to match the id attribute on dom-module element.
+             * By calling this method polymer is registering the lement so it's recognized by the browser*/
+            is: 'icon-toggle'
+        });
+    </script>
 
 </dom-module>
 
