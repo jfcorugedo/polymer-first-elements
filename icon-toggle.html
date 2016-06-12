@@ -23,10 +23,17 @@ local DOM for an element called icon-toggle. -->
             :host {
                 display: inline-block;
             }
+            iron-icon {
+                fill: rgba(0,0,0,0);
+                stroke: currentcolor;/*set the outline color*/
+            }
+            :host([pressed]) iron-icon {
+                fill: currentcolor;
+            }
         </style>
 
         <!-- local DOM goes here -->
-        <span>Not much here yet.</span>
+        <iron-icon icon="polymer"></iron-icon>
     </template>
 
     <!-- This javascript is registering the element -->
