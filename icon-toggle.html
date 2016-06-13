@@ -33,7 +33,7 @@ local DOM for an element called icon-toggle. -->
         </style>
 
         <!-- local DOM goes here -->
-        <iron-icon icon="polymer"></iron-icon>
+        <iron-icon icon="[[toggleIcon]]"></iron-icon>
     </template>
 
     <!-- This javascript is registering the element -->
@@ -42,7 +42,22 @@ local DOM for an element called icon-toggle. -->
             /* this is the element's prototype */
             /* the 'is' value has to match the id attribute on dom-module element.
              * By calling this method polymer is registering the lement so it's recognized by the browser*/
-            is: 'icon-toggle'
+            is: 'icon-toggle',
+            properties: {
+                toggleIcon: String,
+                pressed: {
+                    type: Boolean,
+                    /* The value specifies the property's default value. */
+                    value: false,
+                    /* The notify property tells Polymer to dispatch property change events when the property value
+                       changes. This lets the change be observed by other nodes. */
+                    notify: true,
+                    /* The reflectToAttribute property tells Polymer to update the corresponding attribute when the
+                       property changes. This lets you style the element using an attribute selector,
+                       like icon-toggle[pressed]. */
+                    reflectToAttribute: true
+                }
+            }
         });
     </script>
 
