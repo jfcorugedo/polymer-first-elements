@@ -2,7 +2,7 @@
   "name": "polymer-first-element",
   "version": "0.0.1",
   "scripts": {
-    "bower": "bower install",
+    "postinstall": "bower install",
     "start": "polymer serve"
   },
   "devDependencies": {

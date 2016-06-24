@@ -38,6 +38,14 @@
                 } else {
                     return "Do you like me?";
                 }
+            },
+            /* map events from children and current component to handler names.
+             * The event 'toggled' is fired from any icon-toggle element every time the user presses on it */
+            listeners: {
+                toggle: 'iconChanged'
+            },
+            iconChanged: function() {
+                console.log('icon changed!');
             }
         });
     </script>
