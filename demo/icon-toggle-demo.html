@@ -16,7 +16,8 @@
 
         <h3>Statically-configured icon-toggles</h3>
 
-        <icon-toggle toggle-icon="star"></icon-toggle>
+        <!-- To listen to any property annotated with notify=true just use the attribute on-property-name-changed -->
+        <icon-toggle on-pressed-changed="handleEvent" toggle-icon="star"></icon-toggle>
         <icon-toggle toggle-icon="star" pressed></icon-toggle>
 
 
@@ -46,6 +47,9 @@
             },
             iconChanged: function() {
                 console.log('icon changed!');
+            },
+            handleEvent: function(event) {
+                console.log('pressed-changed received in host component', event);
             }
         });
     </script>
